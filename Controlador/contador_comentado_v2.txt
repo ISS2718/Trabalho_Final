@@ -120,13 +120,13 @@ module controlador (inicio, clk, ch_vm, ch_ref, ch_zr, rst_s, Vint_z,desc_u,desc
       	end
       	ZERAR: begin 
           	//Aguarda a saída do integrador ser 0 (Vint_z = 1)
-          if(Vint_z == 1'b1)
+          cnt_rst = 1'b0;// Reseta a contagem
+          if(Vint_z == 1'b1)            	
         		nextState = CARREGAR;
         	else begin //Se a saída do integrador não vale 0 => continua aguardando
 				ch_vm = 1'b0;
        			ch_ref = 1'b0;
        			ch_zr = 1'b1; // Liga a chave zr
-        		cnt_rst = 1'b0;
         		nextState = ZERAR;
         	end
       	end
