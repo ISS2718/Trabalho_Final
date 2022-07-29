@@ -1,6 +1,8 @@
+---
+
 # Controlador
 
-O [módulo do controlador](/Controlador/contador_comentado_v2.v) é uma máquina de estados finitos para controlar um conversor analógico digital de rampa dupla. Este modulo é definido da seguinte forma:
+O [módulo do controlador](/Controlador - Parte 4/contador_comentado_v2.v) é uma máquina de estados finitos para controlar um conversor analógico digital de rampa dupla. Este modulo é definido da seguinte forma:
 
 ```module controlador (inicio, clk, ch_vm, ch_ref, ch_zr, rst_s, Vint_z,desc_u,desc_d,desc_c);```
 
@@ -43,3 +45,5 @@ Para iniciar a medição usa-se o sinal de início. Deve-se colocar este sinal v
 ## Cicuito RTL
 
 ![Ciruito RTL do Modulo Controlador](/imgs/RTL_Circuit_Controlador_Module.png)
+
+---

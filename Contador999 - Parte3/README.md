@@ -1,35 +1,49 @@
-# Contador 999
+---
 
-Para o modulo contador de 0 a 999 foram feitas duas variações do circuito: a primeira apresenta os resultados BCD e a segunda converte a contagem para sinais 7 segmentos, de forma que é possível rearranjar os sinais de saída para simular displays de 7 segmentos.
+# Controlador
 
-Em ambas implementações, o funcionamento do contador999 baseia-se no uso de 3 contadores de década adaptados para receber e emitir um sinal de enable que permite que um contador ative ou desative outro. Assim, implementamos o circuito de forma que o contador da dezena conta quando o contador da unidade está em “9” e o contador da centena quando os contadores da unidade e da dezena estão em “9”.
+O [módulo do controlador](/Contador999 - Parte3/contador_comentado_v2.v) é uma máquina de estados finitos para controlar um conversor analógico digital de rampa dupla. Este modulo é definido da seguinte forma:
+
+```module controlador (inicio, clk, ch_vm, ch_ref, ch_zr, rst_s, Vint_z,desc_u,desc_d,desc_c);```
 
 ## Entradas
-Em ambos os circuitos ```clk, rstn``` são as entradas: o clock e o reset com borda negativa, respectivamente. 
 
-## [Módulo BCD](/Contador999/contador999_BCD.v)
-O contador com saída BCD é definido da seguinte forma:
+As entradas são: 
 
-```module counter999BCD (q1, q2, q3, clk, rstn);```
+```inicio, clk, Vint_z e rst_s``` 
+    
+Elas representam o sinal de enable do controlador, o clock, a tensão de saída no circuito integrador e o sinal de reset síncrono.
 
-### Saídas
+## Saidas
 
-As saídas ```q1, q2 e q3``` são barramentos com os valores BCD da contagem sendo q1 a unidade, q2 a dezena e q3 a centena.
+As saídas são: 
 
-### Circuito RTL
+```ch_vm, ch_ref, ch_zr, desc_u, desc_d e desc_c``` 
+    
+Que são os sinais de controle das chaves vm, ref e zr e a unidade, dezena e centena do tempo de descarga medido pelo contador.
 
-![Ciruito RTL do Modulo Contador999_BCD](/imgs/RTL_Circuit_Contador999_BCD_Module.png)
+## Maquina de Estados
 
-## [Módulo 7 Seg](/Contador999/contador999_7seg.v)
+Foram definidos 3 estados: carregar, descarregar e zerar. 
 
-O contador com saída 7 segmentos é definido da seguinte forma:
+### Carregar
 
-```module counter9997seg (u0,u1,u2,u3,u4,u5,u6,d0,d1,d2,d3,d4,d5,d6,c0,c1,c2,c3,c4,c5,c6, clk, rstn);```
+No estado carregar a máquina aciona a chave vm e aguarda o contador chegar em 999, quando isso ocorre ela liga o sinal enb_3 e muda para o estado descarregar. 
 
-### Saídas
+### Descarregar
 
-As saídas ```u_, d_, c_``` são os fios dos displays 7 segmentos da unidade, dezena e centena, respectivamente. O fio ```u0``` representa o segmento “a” do display da unidade e o fio ```u6``` o segmento “g”, o mesmo padrão ocorre de forma análoga com os outros fios.
+Esse segundo estado começa a contar novamente, liga a chave vm e aguarda a tensão de saída do integrador ser 0, medindo o tempo de descarga; quando isso acontece o tempo de descarga é registrado nos sinais de saída definidos anteriormente e a máquina muda para o estado zerar. 
 
-### Circuito RTL
+### Zerar
 
-![Ciruito RTL do Modulo Contador999_7seg](/imgs/RTL_Circuit_Contador999_7seg_Module.png)
+O último estado liga a chave zr e aguarda a tensão de saída do integrador ser 0, quando isso acontece a máquina volta para o estado carregar e começa outra medição.
+
+## Utilização
+
+Para iniciar a medição usa-se o sinal de início. Deve-se colocar este sinal valendo 1 para que o circuito vá para o estado padrão (zerar). Em seguida deve-se desativar o sinal de início e aguardar a tensão de saída do circuito integrador ser 0, ou seja, Vint_z = 1, para que o circuito mude para o estado carregar e inicie a medição.
+
+## Cicuito RTL
+
+![Ciruito RTL do Modulo Controlador](/imgs/RTL_Circuit_Controlador_Module.png)
+
+---
