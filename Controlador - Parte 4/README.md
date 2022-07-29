@@ -34,9 +34,9 @@
 
    Esse segundo estado começa a contar novamente, liga a chave vm e aguarda a tensão de saída do integrador ser 0, medindo o tempo de descarga; quando isso acontece o tempo de descarga é registrado nos sinais de saída definidos anteriormente e a máquina muda para o estado zerar. 
 
-   ### Zerar
+  ### Zerar
 
-    O último estado liga a chave zr e aguarda a tensão de saída do integrador ser 0, quando isso acontece a máquina volta para o estado carregar e começa outra medição.
+   O último estado liga a chave zr e aguarda a tensão de saída do integrador ser 0, quando isso acontece a máquina volta para o estado carregar e começa outra medição.
 
  ## Utilização
 
