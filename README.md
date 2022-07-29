@@ -18,7 +18,7 @@
  * [Código Contador 7seg](/Contador999%20-%20Parte3/contador999_7seg.v)
  * [Documentação](/Contador999%20-%20Parte3/README.md)
 
-## [Controlador de AD Dupla Rampa (Verilog)](/Contador999 - Parte3/)
+## [Controlador de AD Dupla Rampa (Verilog)](/Controlador%20-%20Parte%204/)
 
  Além disso foi desenvolvido em verilog, utlizando dos módulos de contadores, um controlador de um conversor analógico digital (AD) dupla rampa.
 
