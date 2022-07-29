@@ -1,3 +1,5 @@
+---
+
 # Contador 999
 
 Para o modulo contador de 0 a 999 foram feitas duas variações do circuito: a primeira apresenta os resultados BCD e a segunda converte a contagem para sinais 7 segmentos, de forma que é possível rearranjar os sinais de saída para simular displays de 7 segmentos.
@@ -33,3 +35,5 @@ As saídas ```u_, d_, c_``` são os fios dos displays 7 segmentos da unidade, de
 ### Circuito RTL
 
 ![Ciruito RTL do Modulo Contador999_7seg](/imgs/RTL_Circuit_Contador999_7seg_Module.png)
+
+---
