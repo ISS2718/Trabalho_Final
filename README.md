@@ -4,7 +4,7 @@
 
  Este trabalho foi desenvolido para finalização da disciplina de Sistemas Digitais do curso de Engenharia de Computação da USP de São Carlos - Docente responsável: Prof. Maximiliam Luppe.
  
-## [Relogio Digital](/Relogio_Digital/)
+## [Relogio Digital](/Relogio Digital/)
 
  Foi desenvolvido três circuitos de relogios digitais dois com CI's TTL([v1](/Circuito_TTL/v1/Circuito_TTL_v1.PDF), [v2](/Circuito_TTL/v2/Circuito_TTL_v2.PDF)) e outro com [CI's CMOS](/Circuito_CMOS/CMOS_Relogio.PDF).
 
