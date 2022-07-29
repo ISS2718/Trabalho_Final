@@ -10,7 +10,7 @@
 
  * [Documentação](/Relogio_Digital.pdf)
 
-## [Contador (Verilog)](/Contador999/)
+## [Contador (Verilog)](/Contador999%20-%20Parte3/)
 
  Foi também desenvolvido em verilog modulos de contadores idependentes para fazer um contador de 0 a 999.
 
