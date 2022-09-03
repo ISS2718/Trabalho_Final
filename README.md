@@ -8,22 +8,22 @@
 
  Foi desenvolvido três circuitos de relogios digitais dois com CI's TTL([v1](/Circuito_TTL/v1/Circuito_TTL_v1.PDF), [v2](/Circuito_TTL/v2/Circuito_TTL_v2.PDF)) e outro com [CI's CMOS](/Circuito_CMOS/CMOS_Relogio.PDF).
 
- * [Documentação](/Relogio_Digital.pdf)
+ * <a href="Relogio Digital/Relogio_Digital.pdf" target="_blank">Documentação</a> 
 
-## [Contador (Verilog)](/Contador999%20-%20Parte3/)
+## <a href="/Contador999%20-%20Parte3/" target="_blank">Contador (Verilog)</a>
 
  Foi também desenvolvido em verilog modulos de contadores idependentes para fazer um contador de 0 a 999.
 
- * [Código Contador BCD](/Contador999%20-%20Parte3/contador999_BCD.v)
- * [Código Contador 7seg](/Contador999%20-%20Parte3/contador999_7seg.v)
- * [Documentação](/Contador999%20-%20Parte3/README.md)
+ * <a href="/Contador999%20-%20Parte3/contador999_BCD.v" target="_blank">Código Contador BCD</a>
+ * <a href="/Contador999%20-%20Parte3/contador999_7seg.v" target="_blank">Código Contador 7seg</a>
+ * <a href="/Contador999%20-%20Parte3/README.md" target="_blank">Documentação</a>
 
-## [Controlador de AD Dupla Rampa (Verilog)](/Controlador%20-%20Parte%204/)
+## <a href="/Controlador%20-%20Parte%204/" target="_blank">Controlador de AD Dupla Rampa (Verilog)</a>
 
  Além disso foi desenvolvido em verilog, utlizando dos módulos de contadores, um controlador de um conversor analógico digital (AD) dupla rampa.
 
- * [Código Controlador](/Controlador%20-%20Parte%204/controlador.v)
- * [Documentação](/Controlador%20-%20Parte%204/README.md)
+ * <a href="/Controlador%20-%20Parte%204/controlador.v" target="_blank">Código Controlador</a>
+ * <a href="/Controlador%20-%20Parte%204/README.md" target="_blank">Documentação</a>
 
 ## Autores:
 
